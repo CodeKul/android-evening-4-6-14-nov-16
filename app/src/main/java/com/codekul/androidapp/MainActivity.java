@@ -26,6 +26,12 @@ public class MainActivity extends Activity {
         rootLayout.setLayoutParams(paramRoot);
         setContentView(rootLayout);
 
+        LinearLayout.LayoutParams paramsText =
+                new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        final TextView text = new TextView(this);
+        text.setLayoutParams(paramsText);
+        text.setText("I am TextView");
+
         LinearLayout.LayoutParams paramsBtn =
                 new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
         Button btnOkay = new Button(this);
@@ -34,17 +40,12 @@ public class MainActivity extends Activity {
         btnOkay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                text.setText("Clicked");
             }
         });
 
         rootLayout.addView(btnOkay);
 
-        LinearLayout.LayoutParams paramsText =
-                new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        TextView text = new TextView(this);
-        text.setLayoutParams(paramsText);
-        text.setText("I am TextView");
         rootLayout.addView(text);
     }
 
