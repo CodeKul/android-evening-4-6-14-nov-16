@@ -7,11 +7,13 @@
     android:orientation="vertical">
 
     <Button
+        android:id="@+id/btnOkay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Okay"/>
 
     <TextView
+        android:id="@+id/textStatus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="I am text view"
