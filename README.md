@@ -80,4 +80,26 @@ if you want to enable java8 you need to add following code snipped to your build
 
 ----------
 
+lambda for button click
+-------------
+
+     btnOkay.setOnClickListener(view -> {
+            text.setText("lambda");
+        });
+
+----------
+
+method references for button click
+-------------
+
+    btnOkay.setOnClickListener(this::okayClicked);
+
+
+    private void okayClicked(View view){
+        TextView text = (TextView) findViewById(R.id.textStatus);
+        text.setText("method ref");
+    }
+
+
+----------
 
