@@ -1,3 +1,7 @@
+codekul.com android
+===================
+
+
 This repo contains codes for evening batch
 
 ----------
@@ -10,7 +14,6 @@ basic building block for user interface components,  rectangular area on the scr
 
 ----------
 
-
 aapt(android asset packaging tool)
 -------------
 
@@ -18,61 +21,63 @@ Looks your res folder and generates R.java file. Every subfolder of res folder i
 
 ----------
 
- setContentView(R.layout.activity_main);
- -------------
+setContentView(R.layout.activity_main);
+-------------
 
- parses the given xml and creates objects in the memory.
+parses the given xml and creates objects in the memory.
 
- ----------
+----------
 
- @+id/btnOkay
- -------------
+@+id/btnOkay
+-------------
 
- @ = R file, + says create new resource, btnOkay is name of the filed inside id resource
+@ = R file, + says create new resource, btnOkay is name of the filed inside id resource
 
- ----------
+----------
 
- findViewById(R.id.btnOkay);
- -------------
+findViewById(R.id.btnOkay);
+-------------
 
- get the reference of that view whos id is btnOkay and created after setContentView call.
+get the reference of that view whos id is btnOkay and created after setContentView call.
 
- ----------
+----------
+
+providing click listener using anonymous inner type
+-------------
 
 
-providing click listener to button using anonymous inner type
- -------------
+get the reference of that view whos id is btnOkay and created after setContentView call.
 
- ```
- Button btnOkay = (Button) findViewById(R.id.btnOkay);
+    Button btnOkay = (Button) findViewById(R.id.btnOkay);
          btnOkay.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
 
              }
          });
- ```
 
-    Type cast is needed because you are assigning parent to child.
- ----------
+ Type cast is needed because you are assigning parent to child.
 
 
- enabling java8
- -------------
+----------
 
- if you want to enable java8 you need to add following code snipped to your build.gradle
- ```
- android {
-   ...
-   defaultConfig {
-     ...
-     jackOptions {
-       enabled true
-     }
-   }
-   compileOptions {
-     sourceCompatibility JavaVersion.VERSION_1_8
-     targetCompatibility JavaVersion.VERSION_1_8
-   }
- }
- ```
+enabling java8
+-------------
+
+if you want to enable java8 you need to add following code snipped to your build.gradle
+
+    android {
+	   defaultConfig {
+	     jackOptions {
+	       enabled true
+	     }
+	   }
+	   compileOptions {
+	     sourceCompatibility JavaVersion.VERSION_1_8
+	     targetCompatibility JavaVersion.VERSION_1_8
+	   }
+	 }
+
+----------
+
+
