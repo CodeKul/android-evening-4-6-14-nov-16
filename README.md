@@ -53,4 +53,26 @@ providing click listener to button using anonymous inner type
          });
  ```
 
+    Type cast is needed because you are assigning parent to child.
  ----------
+
+
+ enabling java8
+ -------------
+
+ if you want to enable java8 you need to add following code snipped to your build.gradle
+ ```
+ android {
+   ...
+   defaultConfig {
+     ...
+     jackOptions {
+       enabled true
+     }
+   }
+   compileOptions {
+     sourceCompatibility JavaVersion.VERSION_1_8
+     targetCompatibility JavaVersion.VERSION_1_8
+   }
+ }
+ ```
