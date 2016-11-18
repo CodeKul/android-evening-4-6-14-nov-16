@@ -26,6 +26,11 @@
         android:layout_height="wrap_content"
         android:text="Best" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sample"/>
+
     <TextView
         android:id="@+id/textInfo"
         android:layout_width="match_parent"

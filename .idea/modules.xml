@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidApp.iml" filepath="$PROJECT_DIR$/AndroidApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alignment/alignment.iml" filepath="$PROJECT_DIR$/alignment/alignment.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/buttonclicks/buttonclicks.iml" filepath="$PROJECT_DIR$/buttonclicks/buttonclicks.iml" />
       <module fileurl="file://$PROJECT_DIR$/uixml/uixml.iml" filepath="$PROJECT_DIR$/uixml/uixml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewmesurementunits/viewmesurementunits.iml" filepath="$PROJECT_DIR$/viewmesurementunits/viewmesurementunits.iml" />
     </modules>
   </component>
 </project>

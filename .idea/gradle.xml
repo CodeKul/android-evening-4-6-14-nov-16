@@ -8,9 +8,11 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/alignment" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buttonclicks" />
             <option value="$PROJECT_DIR$/uixml" />
+            <option value="$PROJECT_DIR$/viewmesurementunits" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
