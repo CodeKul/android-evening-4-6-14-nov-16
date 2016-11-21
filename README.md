@@ -187,3 +187,42 @@ arrangement of views as per relative pos of the parent or another views
 
 
 ----------
+
+
+
+Intent 
+------
+
+
+
+
+     Intent intent = new Intent(this, NewActivity.class); 
+
+**this**  is context
+**NewActivity.class** is type information of target activity
+
+Source code for above Intent constructor is 
+
+    /**
+     * Create an intent for a specific component.  All other fields (action, data,
+     * type, class) are null, though they can be modified later with explicit
+     * calls.  This provides a convenient way to create an intent that is
+     * intended to execute a hard-coded class name, rather than relying on the
+     * system to find an appropriate class for you; see {@link #setComponent}
+     * for more information on the repercussions of this.
+     *
+     * @param packageContext A Context of the application package implementing
+     * this class.
+     * @param cls The component class that is to be used for the intent.
+     *
+     * @see #setClass
+     * @see #setComponent
+     * @see #Intent(String, android.net.Uri , Context, Class)
+     */
+    public Intent(Context packageContext, Class<?> cls) {
+        mComponent = new ComponentName(packageContext, cls);
+    }
+
+
+
+----------
