@@ -176,3 +176,14 @@ gravity and layout_gravity
 ----------
 
 
+
+
+
+RelativeLayout
+--------------
+
+arrangement of views as per relative pos of the parent or another views
+
+
+
+----------

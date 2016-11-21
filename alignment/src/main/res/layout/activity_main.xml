@@ -47,8 +47,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center|bottom"
-        >
+        android:gravity="center|bottom">
 
         <Button
             android:layout_width="wrap_content"
@@ -74,4 +73,5 @@
         android:layout_height="wrap_content"
         android:hint="User Name"
         android:drawableRight="@drawable/ic_attach_file_black_24dp"/>
+
 </LinearLayout>

@@ -1,1 +1,1 @@
-include ':app', ':uixml', ':buttonclicks', ':viewmesurementunits', ':alignment'
+include ':app', ':uixml', ':buttonclicks', ':viewmesurementunits', ':alignment', ':relativelayout'
