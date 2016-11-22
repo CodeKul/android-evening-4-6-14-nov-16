@@ -12,12 +12,25 @@
     android:background="@color/colorAccent">
 
     <TextView
+        android:id="@+id/textHashTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="#codekul"
         android:textColor="#ffffff"
         android:textSize="70sp"
         android:layout_centerInParent="true"
+        />
+
+    <TextView
+        android:id="@+id/textOs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#e8e8e8"
+        android:text="Android"
+        android:layout_below="@id/textHashTag"
+       android:gravity="end"
+        android:layout_marginRight="35dp"
+        android:textSize="35sp"
         />
 
 </RelativeLayout>

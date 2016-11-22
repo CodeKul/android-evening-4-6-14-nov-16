@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String KEY_MY_OS = "myOs";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void openNewActivity() {
         Intent intent = new Intent(this, NewActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY_MY_OS,getOs());
+
+        intent.putExtras(bundle);
+
         startActivity(intent);
     }
 
@@ -34,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 .setOnCheckedChangeListener(this::checkChanged);
 
         ((RadioButton)findViewById(R.id.rbApple))
+                .setOnCheckedChangeListener(this::checkChanged);
+
+        ((RadioButton)findViewById(R.id.rbRim))
                 .setOnCheckedChangeListener(this::checkChanged);
 
         /*((RadioButton)findViewById(R.id.rbRim))
@@ -48,15 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 .setOnCheckedChangeListener((buttonView, isChecked) -> {
 
                 });*/
-
-        ((RadioButton)findViewById(R.id.rbRim))
-                .setOnCheckedChangeListener(this::checkChanged);
     }
 
     private void checkChanged(CompoundButton compoundButton, boolean isChecked) {
         if(isChecked) {
-            if (compoundButton instanceof RadioButton) {
-                RadioButton rb = (RadioButton) compoundButton;
+            if (compoundButton instanceof RadioButton) { //RTTI
+                RadioButton rb = (RadioButton) compoundButton; // casting
                 setOs(rb.getText().toString());
             }
         }
@@ -64,5 +71,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setOs(String os){
         ((EditText)findViewById(R.id.edtOs)).setText(os);
+    }
+
+    private String getOs(){
+        return ((EditText)findViewById(R.id.edtOs)).getText().toString();
     }
 }
