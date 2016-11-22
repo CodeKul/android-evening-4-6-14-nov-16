@@ -11,6 +11,8 @@ import android.widget.RadioButton;
 public class MainActivity extends AppCompatActivity {
 
     public static final String KEY_MY_OS = "myOs";
+    public static final int REQ_NEW_ACTIVITY = 1345;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
         intent.putExtras(bundle);
 
-        startActivity(intent);
+        //startActivity(intent);
+
+        startActivityForResult(intent, REQ_NEW_ACTIVITY);
     }
 
     private void initRbs() {
@@ -75,5 +79,22 @@ public class MainActivity extends AppCompatActivity {
 
     private String getOs(){
         return ((EditText)findViewById(R.id.edtOs)).getText().toString();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == REQ_NEW_ACTIVITY){
+            if(resultCode == RESULT_OK){
+                setOs(getMobile(data));
+            }
+        }
+    }
+
+    private String getMobile(Intent data) {
+        if(data == null) throw new RuntimeException();
+
+        return  data.getStringExtra(NewActivity.KEY_MY_MOBILE);
     }
 }
