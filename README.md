@@ -190,8 +190,8 @@ arrangement of views as per relative pos of the parent or another views
 
 
 
-Intent 
-------
+InterActivity Communication
+---------------------------
 
 
 
@@ -226,3 +226,139 @@ Source code for above Intent constructor is
 
 
 ----------
+
+
+
+
+
+
+
+Starting new activity
+-------------
+
+
+    startActivity(intent); starting new activity for given intent.
+
+
+----------
+
+
+
+Passing data to new activity
+-------------
+
+
+   The activity who needs to **pass data** should use following code
+
+    Bundle bundle = new Bundle();
+    bundle.putString(KEY_MY_OS,getOs());
+
+    intent.putExtras(bundle);
+
+In the **new activity** you can get the passed data using 
+
+     private String getOsFromMain() {
+        Intent intent = getIntent();
+        if(intent == null) throw new RuntimeException();
+
+        Bundle bundle = intent.getExtras();
+        String os = bundle.getString(MainActivity.KEY_MY_OS);
+
+        return os;
+    }
+
+----------
+
+
+
+
+
+
+send data back
+-------------
+
+If A activity needs data back from B activity.  A should start activity with 
+
+    private void openNewActivity() {
+        Intent intent = new Intent(this, NewActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY_MY_OS,getOs());
+
+        intent.putExtras(bundle);
+
+        //startActivity(intent);
+
+        startActivityForResult(intent, REQ_NEW_ACTIVITY);
+    }
+Once you comeback from B activity to A activity, **onActivityResult** from A activity gets invoked 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == REQ_NEW_ACTIVITY){
+            if(resultCode == RESULT_OK){
+                setOs(getMobile(data));
+            }
+        }
+    }
+
+Activity B will process the data and send it back to activity A using following code
+
+    private void throwDataToBack() {
+        Intent intent = new Intent();
+        intent.putExtra(KEY_MY_MOBILE,getMobile());
+
+        setResult(RESULT_OK,intent);
+        finish();
+    }
+
+
+  
+
+----------
+
+
+
+
+Compound Views
+-------------
+
+Combination of multiple views which will represent single view object.
+
+ 
+
+
+----------
+
+
+View Inflater
+-------------
+
+Creating object of layout inflater 
+
+    LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);
+
+
+layout inflater will **convert** your **xml** to the **view** object, it is system **service**
+
+----------
+
+
+Accessing view inside compound view
+-------------
+
+This is how we will access view inside compound view 
+
+    View compundView = inflater.inflate(R.layout.social_media, null, false);
+    TextView textStatus = (TextView) compundView.findViewById(R.id.textStatus);
+    textStatus.setText(status);
+
+ 
+
+
+----------
+
+
