@@ -342,6 +342,17 @@ Creating object of layout inflater
                 getSystemService(LAYOUT_INFLATER_SERVICE);
 
 
+
+if you know the context you can use above or following 
+
+    LayoutInflater inflater = LayoutInflater.from(this);
+
+and if you are in the activity use 
+
+    LayoutInflater inflater = getLayoutInflater();
+
+ 
+
 layout inflater will **convert** your **xml** to the **view** object, it is system **service**
 
 ----------

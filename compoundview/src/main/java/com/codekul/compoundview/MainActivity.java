@@ -28,8 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
         LinearLayout layoutRoot = (LinearLayout) findViewById(R.id.layoutRoot);
 
-        LayoutInflater inflater = (LayoutInflater)
-                getSystemService(LAYOUT_INFLATER_SERVICE);
+        /*LayoutInflater inflater = (LayoutInflater)
+                getSystemService(LAYOUT_INFLATER_SERVICE);*/
+
+        //LayoutInflater inflater = LayoutInflater.from(this);
+
+        LayoutInflater inflater = getLayoutInflater();
 
         View compundView = inflater.inflate(R.layout.social_media, null, false);
         TextView textStatus = (TextView) compundView.findViewById(R.id.textStatus);
