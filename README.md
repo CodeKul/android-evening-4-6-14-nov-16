@@ -373,3 +373,59 @@ This is how we will access view inside compound view
 ----------
 
 
+
+
+
+
+
+Custom Views
+-------------
+
+extending to view class for working with canvas. you will need to override onDraw method which is coming from view class. You can either extend to directly view or TextView or your needed view. After overriding you will get canvas object to draw something on view.  Here is the code sample
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        this.canvas = canvas;
+
+        canvas.drawText("{code}kul;",300,70,paint);
+        paint.setColor(Color.BLACK);
+
+        canvas.drawCircle(circlex,circley,20,paint);
+
+        canvas.drawCircle(50,50,30,paint);
+    }
+
+when you will extend to view class you need to override 2 constructors, one for using your view via code and other for xml 
+
+**via code**
+
+
+     public MyView(Context context) {
+        super(context);
+        // by coding
+
+        init();
+    }
+
+
+
+**via xml**
+
+
+
+    public MyView(Context context, AttributeSet attr) {
+        super(context,attr);
+
+        // by xml
+
+        init();
+    }
+
+
+
+----------
+
+
+
+
