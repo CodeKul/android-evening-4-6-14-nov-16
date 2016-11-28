@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String []nums = {"+","-","*","/","=","C","0","1","2","3","4","5","6","7","8","9"};
-        CalcAdapter adapter = new CalcAdapter(this,nums, this::onDigitClick);
+        CalcAdapter adapter = new CalcAdapter(this, nums, this::onDigitClick);
         ((GridView)findViewById(R.id.gridCalc)).setAdapter(adapter);
     }
 
