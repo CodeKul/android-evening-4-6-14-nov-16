@@ -1,1 +1,1 @@
-include ':app', ':uixml', ':buttonclicks', ':viewmesurementunits', ':alignment', ':relativelayout', ':interactivitycommunication', ':compoundview', ':customview', ':bouncingball', ':viewanimation', ':listview'
+include ':app', ':uixml', ':buttonclicks', ':viewmesurementunits', ':alignment', ':relativelayout', ':interactivitycommunication', ':compoundview', ':customview', ':bouncingball', ':viewanimation', ':listview', ':cutsomadapter', ':calculator'

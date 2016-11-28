@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:weightSum="1">
+
+    <ImageView
+        android:id="@+id/imageFlag"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.4"
+        android:layout_gravity="left"/>
+
+    <TextView
+        android:id="@+id/textCountryName"
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="50dp"
+        android:gravity="center|left"
+        android:textSize="35sp"/>
+
+    <CheckBox
+        android:id="@+id/checkIn"
+        android:layout_width="0dp"
+        android:layout_weight="0.1"
+        android:layout_height="50dp" />
+
+</LinearLayout>

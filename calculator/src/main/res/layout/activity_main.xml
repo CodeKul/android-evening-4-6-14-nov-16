@@ -6,12 +6,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.codekul.listview.MainActivity">
+    tools:context="com.codekul.calculator.MainActivity"
+    android:background="#e8e8e8">
 
-    <ListView
-        android:id="@+id/listCountries"
+    <EditText
+        android:id="@+id/edtNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Num"
+        android:layout_alignParentTop="true"
+        android:gravity="right"/>
+
+    <GridView
+        android:id="@+id/gridCalc"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/edtNum"
+        android:numColumns="4"
          />
-
 </RelativeLayout>
