@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/activitylifecycle" />
             <option value="$PROJECT_DIR$/alignment" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bouncingball" />
@@ -19,6 +20,7 @@
             <option value="$PROJECT_DIR$/interactivitycommunication" />
             <option value="$PROJECT_DIR$/listview" />
             <option value="$PROJECT_DIR$/relativelayout" />
+            <option value="$PROJECT_DIR$/retainingstate" />
             <option value="$PROJECT_DIR$/uixml" />
             <option value="$PROJECT_DIR$/viewanimation" />
             <option value="$PROJECT_DIR$/viewmesurementunits" />
