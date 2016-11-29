@@ -457,3 +457,56 @@ A concrete BaseAdapter that is backed by an array of arbitrary  objects.  By def
 
 
 
+
+
+Custom Adapter
+-------------
+Your adapter should extend to base adapter, which will allow you to add 4 method from BaseAdapter calss
+
+
+
+   
+
+     @Override
+    public int getCount() {
+        return countries.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return countries.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return countries.get(position).getId();
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+
+        View view = null;
+        if(convertView == null) view = inflater.inflate(R.layout.list_item,null,false);
+        else view = convertView;
+
+        ((ImageView)view.findViewById(R.id.imageFlag))
+                .setImageResource(countries.get(position).getCountryFlag());
+
+        ((TextView)view.findViewById(R.id.textCountryName))
+                .setText(countries.get(position).getCountryName());
+
+        return view;
+    }
+
+
+ 
+
+----------
+
+
+Activity Life Cycle
+-------------------
+
+
+
+----------
