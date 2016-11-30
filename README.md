@@ -504,9 +504,85 @@ Your adapter should extend to base adapter, which will allow you to add 4 method
 ----------
 
 
-Activity Life Cycle
--------------------
+Activity Lifecycle
+-------------
 
+ There are *7* methods of activity lifecycle and it is divided into 4 states i.e.  *running*, *paused*, *stopped* or *destroyed*
+
+
+    public class Activity extends ApplicationContext {
+     protected void onCreate(Bundle savedInstanceState);
+
+     protected void onStart();
+
+     protected void onRestart();
+
+     protected void onResume();
+
+     protected void onPause();
+
+     protected void onStop();
+
+     protected void onDestroy();
+     }
+
+
+----------
+
+
+
+
+
+Saving state of activity
+-------------
+
+ If your activity would be getting destroyed due to runtime configuration change or lack of memory you need to maintain the state.
+
+     @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_TEXT_INFO, product.getName());
+        outState.putFloat(KEY_TEXT_PRICE, product.getPrice());
+        outState.putInt(KEY_TEXT_CASHBACK, product.getCashBack());
+    }
+
+onSavedInstanceState would getting called before activity getting destroyed due to above reasons. You can retain the state by either using Bundle that comes with onCreate or you can override separate method onRestoreInstanceState 
+
+**onCreate**
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        if(savedInstanceState  != null) {
+            ((TextView)findViewById(R.id.textInfo)).setText(savedInstanceState.getString(KEY_TEXT_INFO) + " - > " + savedInstanceState.getString(KEY_TEXT_ADDRESS));
+        }
+
+
+        findViewById(R.id.btnOkay).setOnClickListener(this::clicked);
+    }
+
+
+**onRestoreInstanceState**
+
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if(savedInstanceState  != null)
+            ((TextView)findViewById(R.id.textInfo)).setText(savedInstanceState.getString(KEY_TEXT_INFO) + " - > " + savedInstanceState.getFloat(KEY_TEXT_PRICE));
+    }
+
+
+
+----------
+
+
+
+Handling Runtime Configuration Changes
+-------------
 
 
 ----------

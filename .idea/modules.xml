@@ -13,7 +13,10 @@
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />
       <module fileurl="file://$PROJECT_DIR$/cutsomadapter/cutsomadapter.iml" filepath="$PROJECT_DIR$/cutsomadapter/cutsomadapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/interactivitycommunication/interactivitycommunication.iml" filepath="$PROJECT_DIR$/interactivitycommunication/interactivitycommunication.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languagehandling/languagehandling.iml" filepath="$PROJECT_DIR$/languagehandling/languagehandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/listview/listview.iml" filepath="$PROJECT_DIR$/listview/listview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/orientationhandling/orientationhandling.iml" filepath="$PROJECT_DIR$/orientationhandling/orientationhandling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ownhandling/ownhandling.iml" filepath="$PROJECT_DIR$/ownhandling/ownhandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/relativelayout/relativelayout.iml" filepath="$PROJECT_DIR$/relativelayout/relativelayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/retainingstate/retainingstate.iml" filepath="$PROJECT_DIR$/retainingstate/retainingstate.iml" />
       <module fileurl="file://$PROJECT_DIR$/uixml/uixml.iml" filepath="$PROJECT_DIR$/uixml/uixml.iml" />

@@ -18,7 +18,10 @@
             <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/cutsomadapter" />
             <option value="$PROJECT_DIR$/interactivitycommunication" />
+            <option value="$PROJECT_DIR$/languagehandling" />
             <option value="$PROJECT_DIR$/listview" />
+            <option value="$PROJECT_DIR$/orientationhandling" />
+            <option value="$PROJECT_DIR$/ownhandling" />
             <option value="$PROJECT_DIR$/relativelayout" />
             <option value="$PROJECT_DIR$/retainingstate" />
             <option value="$PROJECT_DIR$/uixml" />
