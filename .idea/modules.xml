@@ -19,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/ownhandling/ownhandling.iml" filepath="$PROJECT_DIR$/ownhandling/ownhandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/relativelayout/relativelayout.iml" filepath="$PROJECT_DIR$/relativelayout/relativelayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/retainingstate/retainingstate.iml" filepath="$PROJECT_DIR$/retainingstate/retainingstate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simplevalueresources/simplevalueresources.iml" filepath="$PROJECT_DIR$/simplevalueresources/simplevalueresources.iml" />
       <module fileurl="file://$PROJECT_DIR$/uixml/uixml.iml" filepath="$PROJECT_DIR$/uixml/uixml.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewanimation/viewanimation.iml" filepath="$PROJECT_DIR$/viewanimation/viewanimation.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewmesurementunits/viewmesurementunits.iml" filepath="$PROJECT_DIR$/viewmesurementunits/viewmesurementunits.iml" />
