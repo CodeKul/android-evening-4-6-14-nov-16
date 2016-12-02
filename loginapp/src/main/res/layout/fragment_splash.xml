@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.codekul.loginapp.SplashFragment">
+
+    <TextView
+        android:id="@+id/textAppName"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/codekul"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="@dimen/textAppNameSize"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnLogin"
+            style="@style/Base.TextAppearance.AppCompat.Large"
+            android:drawableLeft="@drawable/ic_locked"
+            android:background="@color/faintGrey"
+            android:textSize="@dimen/btnSizeBottom"/>
+
+        <TextView
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnRegister"
+            style="@style/Base.TextAppearance.AppCompat.Large"
+            android:layout_marginLeft="@dimen/marginLogin"
+            android:background="@color/faintGrey"
+            android:drawableLeft="@drawable/ic_plus"
+            android:textSize="@dimen/btnSizeBottom"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

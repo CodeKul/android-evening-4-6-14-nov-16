@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnLogin">Login</string>
+    <string name="btnRegister">Register</string>
+    <string name="codekul">{code}kul;</string>
+    <string name="edtUserName">user Name</string>
+    <string name="edtPassword">Password</string>
+</resources>

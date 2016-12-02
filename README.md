@@ -581,8 +581,142 @@ onSavedInstanceState would getting called before activity getting destroyed due 
 
 
 
-Handling Runtime Configuration Changes
+Handling Runtime Changes
 -------------
+
+**by android** 
+
+Almost every application should provide alternative resources to support specific device configurations e.g. **layout-en , layout-fr** here you are saying if locale of your phone is English; select layout-en other wise if it French select layout-fr . Any resource can be proceeded with qualifier. As per your phone configuration resource folder wold be getting selected. This strategy is having one problem, on the configuration change android restarts the activity every time, which is heavier job for handling.
+
+**by own**
+
+By considering above flaw, you can handle runtime changes on your own by mentioning it in manifest file to the activity.  
+
+*manifest file*
+
+    <activity android:name=".MainActivity" android:configChanges="orientation|screenSize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+ 
+
+in an activity you have to override onConfigurationChanged method for receiving  new configuration object mentioned in activity tag. In above case it is *orientation* and *screenSize* 
+
+*activity method*
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            ((ImageView)findViewById(R.id.imageCenter)).setImageResource(R.drawable.hulk);
+        }
+        else if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            ((ImageView)findViewById(R.id.imageCenter)).setImageResource(R.drawable.hulk1);
+        }
+        else {
+            ((ImageView)findViewById(R.id.imageCenter)).setImageResource(R.mipmap.ic_launcher);
+        }
+    }
+
+
 
 
 ----------
+
+
+
+
+
+
+Simple Value Resources
+-------------
+
+Externalization of static data is important in the perspective of maintainability and code readability . For this android has given you few resources like string, dimen, color, styles, string array, int array etc. 
+
+**string** -  all strings that would be used some where your project 
+*xml*  ` <string name="styleText">CodeKul</string>`
+*from java code*  `String nameBtn = getResources().getString(R.string.btnOkay);`
+
+**color** - useful colors would be mentioned here 
+*xml* `<color name="pureWhite">#FFFFFF</color>`
+*java code*  `pureWhite = ContextCompat.getColor(this,R.color.pureWhite);`
+
+**styles** - we can combine few properties of a view in one style, to use them repeatedly.
+
+*xml defination*  
+
+      <style name="simpleStyle">
+        <item name="android:text">@string/styleText</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">150dp</item>
+    </style>
+
+*xml use*
+
+     <TextView
+        android:id="@+id/textSimple1"
+        style="@style/simpleStyle"/>
+        
+If style would be getting applied to activity or application it becomes theme. 
+
+    <activity
+            android:name=".MainActivity"
+            android:theme="@style/simpleStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+----------
+
+
+Fragments
+-------------
+
+Fragment is portion of an activity, which has its own life cycle, but it is dependent on host activity life cycle.  Fragments can be created using 2 ways , via fragment tag and fragment transaction.  
+
+**fragment tag**
+
+     <fragment
+        android:id="@+id/fragmentLogin"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        class="com.codekul.fragments.LoginFragment"
+        />
+
+ 
+r 
+**fragment class**
+
+Your fragment at least override onCreateView to return the face of fragment. But sometimes fragments can be faceless. You can use support fragment to run your app below honeycomb(3.x) series. 
+
+    public class SplashFragment extends Fragment {
+
+
+    public SplashFragment() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        return inflater.inflate(R.layout.fragment_splash, container, false);
+    }
+
+}
+
+
+----------
+
+
