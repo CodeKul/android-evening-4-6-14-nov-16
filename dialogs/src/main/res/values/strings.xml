@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Dialogs</string>
+    <string name="btnAlert">Alert</string>
+    <string name="btnDatePicker">Date Picker</string>
+    <string name="btnTimePicker">Time Picker</string>
+    <string name="btnProgress">Progress</string>
+    <string name="btnCustom">Custom</string>
+    <string name="message">Message</string>
+    <string name="title">Title</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btnYes">Yes</string>
+    <string name="btnNo">No</string>
+    <string name="edtUserName">User Name</string>
+    <string name="edtPassword">Password</string>
+    <string name="btnLogin">Login</string>
+</resources>
