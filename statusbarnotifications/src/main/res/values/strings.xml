@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">StatusBarNotifications</string>
+    <string name="contentInfo">Content Info</string>
+    <string name="contentTitle">Content Title</string>
+    <string name="contentText">Content Text</string>
+    <string name="btnOkay">Okay</string>
+    <string name="codekul">{code}kul;</string>
+</resources>

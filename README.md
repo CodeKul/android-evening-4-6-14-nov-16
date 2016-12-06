@@ -720,3 +720,44 @@ Your fragment at least override onCreateView to return the face of fragment. But
 ----------
 
 
+
+
+
+Documents
+-------------
+
+----------
+
+
+
+Fragment Transaction
+-------------
+
+You can load fragment by running fragment transaction. Every fragment knows the host activity i.e. on which fragment is running by the following method call
+
+    getActivity() 
+
+If you want to load fragment to the activity you are going to use ***FragmentManager*** and ***FragmentTransaction*** in following way 
+
+    public void runFragmentTxn(Fragment frag,String name) {
+
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction txn = manager.beginTransaction();
+        txn.addToBackStack(name);
+        txn.replace(R.id.frameContainer, frag);
+        txn.commit();
+    }
+
+Committing the is very important. Above method manages fragment backstack at very primitive level. You can write your logic to maintain the back stack in onBackPressed method
+
+----------
+
+
+
+Fragment Best practices 
+-------------
+
+
+
+
+----------

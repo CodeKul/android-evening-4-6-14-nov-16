@@ -17,7 +17,6 @@ public class SplashFragment extends Fragment {
 
 
     public SplashFragment() {
-        // Required empty public constructor
     }
 
 
@@ -40,7 +39,7 @@ public class SplashFragment extends Fragment {
 
     private void clicked(View view) {
         if(view.getId() == R.id.btnLogin) ((MainActivity)getActivity())
-                .runFragmentTxn(new LoginFragment(),"login");
+                .runFragmentTxn(LoginFragment.getInstance("android","android"),"login");
 
         if(view.getId() == R.id.btnRegister) ((MainActivity)getActivity())
                 .runFragmentTxn(new RegisterFragment(),"registration");
