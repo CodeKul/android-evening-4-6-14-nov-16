@@ -27,6 +27,18 @@ public class MyDialog extends DialogFragment {
     public static final String DIALOG_PROGRESS = "progress" ;
     public static final String DIALOG_CUSTOM = "custom";
 
+
+  /* for rahul only
+  public interface OnDatePicked {
+        void date(int day, int month, int year);
+    }
+
+    private OnDatePicked datePicked;
+
+    public void setDatePicked(OnDatePicked datePicked) {
+        this.datePicked = datePicked;
+    }*/
+
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -73,7 +85,13 @@ public class MyDialog extends DialogFragment {
     private Dialog showDatePicker() {
 
         //Calendar
-        DatePickerDialog datePicker = new DatePickerDialog(getActivity(), (view, year, month, dayOfMonth) -> mt(""+dayOfMonth +" - "+(month+1)+" - "+year) , 2017,0,1);
+        DatePickerDialog datePicker = new DatePickerDialog(getActivity(), (view, year, month, dayOfMonth) -> {
+
+            /* for rahul only
+            if(datePicked != null)
+                datePicked.date(dayOfMonth,month,year);*/
+
+        }  , 2017,0,1);
         datePicker.getDatePicker().setMinDate(System.currentTimeMillis());
         return  datePicker;
     }

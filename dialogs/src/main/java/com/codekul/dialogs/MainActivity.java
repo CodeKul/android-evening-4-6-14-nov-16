@@ -4,6 +4,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     }
     private void showDialog(String tag) {
         MyDialog dialog = new MyDialog();
+        /* for rahul only
+        dialog.setDatePicked((day, month, year) -> {
+            ((Button)findViewById(R.id.btnDatePicker)).setText(""+day+" - "+month +" - "+year);
+        });*/
         dialog.show(getSupportFragmentManager(),tag);
     }
 }
