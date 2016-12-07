@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void click(View view) {
-        openImage();
+        shareIntent();
     }
 
     private void openComman(){
@@ -64,5 +64,14 @@ public class MainActivity extends AppCompatActivity {
         intent.setAction(Intent.ACTION_VIEW);
         intent.setDataAndType(Uri.parse("my.png"),"image/*");
         startActivity(intent);
+    }
+
+    private void shareIntent(){
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareBody = "Here is the share content body";
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
     }
 }

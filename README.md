@@ -721,15 +721,6 @@ Your fragment at least override onCreateView to return the face of fragment. But
 
 
 
-
-
-Documents
--------------
-
-----------
-
-
-
 Fragment Transaction
 -------------
 
@@ -751,11 +742,6 @@ If you want to load fragment to the activity you are going to use ***FragmentMan
 Committing the is very important. Above method manages fragment backstack at very primitive level. You can write your logic to maintain the back stack in onBackPressed method
 
 ----------
-
-
-
-
-
 
 
 Fragment Best practices 
@@ -827,12 +813,261 @@ Simple message to user, generally not intractable. By the definition in document
 ----------
 
 
-Statusbar notifications
+Status bar notifications
 -------------
 
-these will appear in the status bar .
+these will appear in the status bar . 
+
+**Pending Intent**
+In this type of notification user action is pending until and unless user is not going to click on status bar notification, in such cases you are going to use pending intent. Pending can start new activity, start new service or broadcast .
+
+    Intent intent = new Intent(this, NotificationActivity.class);
+
+    PendingIntent pendingIntent =
+                PendingIntent.getActivity(this, REQ_NOTIFICATION, intent, PendingIntent.FLAG_ONE_SHOT);
+
+
+where this - context, REQ_NOTIFICATION - request code, intent - intent to fired,  PendingIntent.FLAG_ONE_SHOT - decided data of the new activity.
+
+
+Sending actual notification is as simple as follows
+
+     NotificationCompat.Action action =
+                new NotificationCompat.Action.Builder(R.drawable.ic_android_black_24dp,"Action",pendingIntent)
+                        .build();
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+        builder.setSmallIcon(R.mipmap.ic_launcher);
+        builder.setContentInfo(getResources().getString(R.string.contentInfo));
+        builder.setContentTitle(getResources().getString(R.string.contentTitle))
+                .setContentText(getResources().getString(R.string.contentText))
+                .setDefaults(Notification.DEFAULT_ALL)
+                .setOngoing(true)
+                .setContentIntent(pendingIntent)
+                .addAction(action)
+                .setAutoCancel(true);
+
+
+        Notification notification = builder.build();
+        NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        manager.notify(NOTIFICATION_SIMPLE, notification);
+
+
+actions are nothing but buttons in the notification.
+
 
 ----------
+
+
+Dialog Notification
+-------------
+
+**FragmentDialog**
+
+whenever you will need multiple dialogs, it good practice to extend your dialog with FragmentDialog class.
+
+    public class MyDialog extends DialogFragment {
+
+   
+	    @NonNull
+	    @Override
+	    public Dialog onCreateDialog(Bundle savedInstanceState) {
+	
+	        Dialog dialog  = null;
+		       
+	        return dialog;
+	    }
+    }
+
+
+
+where you can return the dialog object by reference of tag, that will be passed at the time of show method call
+
+
+    private void showDialog(String tag) {
+        MyDialog dialog = new MyDialog();
+        dialog.show(getSupportFragmentManager(),tag);
+    }
+
+
+**Alert**
+
+This dialog is used to present yes, no situation. You can assign title, message body, icon and positive, negative, neutral buttons.  
+
+    private AlertDialog showAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setIcon(R.mipmap.ic_launcher)
+                .setMessage(R.string.message)
+                .setTitle(R.string.title)
+                .setPositiveButton(R.string.btnYes, this::alertButtonClicked)
+                .setNegativeButton(R.string.btnNo, this::alertButtonClicked);
+       return  builder.create();
+    }
+
+**DatePickerDialog** 
+
+It will show you calendar like view where you can select any date for any year. You can retrieve selected date using OnDateSetListener 
+
+    private Dialog showDatePicker() {
+
+        //Calendar
+        DatePickerDialog datePicker = new DatePickerDialog(getActivity(), 
+        (view, year, month, dayOfMonth) -> { }  , 2017,0,1);
+        
+        return  datePicker;
+    }
+
+**TimePickerDialog**
+
+It will show you clock like view where you can select hours , minutes and 12 or 24 hour clock. You can retrieve selected time using OnTimeSetListener 
+
+    private Dialog showTimePicker() {
+
+        TimePickerDialog timePicker =
+                new TimePickerDialog(getActivity(),(view, hourOfDay, minute) -> mt(""+hourOfDay +" : "+ minute),6,8,true);
+
+        return timePicker;
+    }
+
+
+**Progress Dialog**
+
+It is used to show indefinite rotating spinner or definite progress bar. You can define max progress and change progress over time.  You can assign title, message and buttons. 
+
+
+    private Dialog showProgressDialog() {
+
+        ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setTitle(R.string.title);
+        progressDialog.setMessage(getResources().getString(R.string.message));
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        progressDialog.setButton(DialogInterface.BUTTON_POSITIVE,getResources().getString(R.string.btnYes),(dialog, which) -> mt("Yes Clicked"));
+        progressDialog.setMax(100);
+        progressDialog.setProgress(45);
+        return progressDialog;
+    }
+
+**Custom dialog**
+
+It is alert dialog where you can decide custom view by setView method. Here you can use layout inflater to generate view from xml.
+
+     private Dialog showCustomDialog() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.custom_dialog,null,false);
+        view.findViewById(R.id.btnLogin).setOnClickListener(v -> mt("Login Clicked"));
+        builder.setView(view);
+        return builder.create();
+    }
+
+
+
+----------
+
+
+Intents and IntentFilters
+-------------
+
+**Explicit Intent**
+
+Intent to which you are assigning source context and target type information explicitly are refereed as explicit intents. 
+
+    Intent intent = new Intent(this, NewActivity.class);
+
+**Implicit Intents**
+
+Intent to whom we are passing action, category and data are referred as implicit intents .
+
+     Intent intent = new Intent();
+     intent.setAction(Intent.ACTION_VIEW);
+     intent.setDataAndType(Uri.parse("my.png"),"image/*");
+     startActivity(intent);
+
+
+**Intent Filters**
+
+Everything from intent should find match with intent filter.  Generally intent filters are described in manifest file to the activity , service and receiver tag.
+
+    <activity android:name=".NewsActivity" >
+            <intent-filter>
+                <action android:name="com.codekul.action.COMMAN"/>
+                <action android:name="com.codekul.action.NEWS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+      </activity>
+
+Assigning data to intent filter tag, If intent filter has data your intent should specify the data with setData method
+
+    <activity android:name=".SportsActivity" >
+            <intent-filter>
+                <action android:name="com.codekul.action.COMMAN"/>
+                <action android:name="com.codekul.action.SPORTS"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http" />
+            </intent-filter>
+    </activity>
+
+here intent for above intent filter will be as follows
+
+    private void openCommanWithData() {
+        Intent intent = new Intent();
+        intent.setAction("com.codekul.action.COMMAN");
+        /* # */intent.setData(Uri.parse("http://codekul.com"));
+        startActivity(intent);
+    }
+
+
+**dial** 
+
+Use ACTION_DIAL action for opening dial screen
+
+     private void dial(){
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_DIAL);
+        startActivity(intent);
+    }
+
+**call**
+
+use ACTION_CALL action for directly calling,
+
+    private void call() {
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        intent.setData(Uri.parse("tel://9762548833"));
+        startActivity(intent);
+    }
+to use this make sure that you have CALL permission in manifest file. If you are running above api level 23 i.e. on or above marshmallow you need get that permission manually from app settings
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+
+**share intent** 
+
+If you want to your data to be shared you can use share intent 
+
+     private void shareIntent(){
+        Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        String shareBody = "body";
+        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "sub");
+        sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+        startActivity(Intent.createChooser(sharingIntent, "Share via"));
+    }
+
+**any intent**
+
+To ACTION_VIEW you can pass any type of data to open respective activity.
+
+    Intent intent = new Intent();
+    intent.setAction(Intent.ACTION_VIEW);
+    intent.setDataAndType(Uri.parse("my.png"),"image/*");
+    startActivity(intent);
+ 
+
+----------
+
+
+
 
 
 Documents
@@ -840,5 +1075,4 @@ Documents
 
 
 ----------
-
 

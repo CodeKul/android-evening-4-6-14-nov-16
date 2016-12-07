@@ -45,9 +45,8 @@ public class MainActivity extends AppCompatActivity {
         builder.setContentTitle(getResources().getString(R.string.contentTitle))
                 .setContentText(getResources().getString(R.string.contentText))
                 .setDefaults(Notification.DEFAULT_ALL)
-//                .setOngoing(true)
+                .setOngoing(true)
                 .setContentIntent(pendingIntent)
-                //.addAction(R.mipmap.ic_launcher, getResources().getString(R.id.action), pendingIntent)
                 .addAction(action)
                 .setAutoCancel(true);
 
