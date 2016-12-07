@@ -754,10 +754,91 @@ Committing the is very important. Above method manages fragment backstack at ver
 
 
 
+
+
+
+
 Fragment Best practices 
 -------------
 
+Creating object of fragment , consider following 2 statements 
 
+    LoginFragment.getInstance("android","android")
+    new RegisterFragment()
+
+Here is second statement you are creating object of RegistrationFragment and in first statement you are creating object of LoginFragment.  But first is recommended by android, because android needs empty constructor for fragment class. Why ? android creates object of fragment class using instantiate() method and this method uses newInstance() from reflection api , so it needs empty constructor lets see code below 
+
+     Class<?> clazz = sClassMap.get(fname);
+            if (clazz == null) {
+               // Class not found in the cache, see if it's real, and try to add it
+                clazz = context.getClassLoader().loadClass(fname);
+                sClassMap.put(fname, clazz);
+            }
+            Fragment f = (Fragment)clazz.newInstance();
+            if (args != null) {
+                args.setClassLoader(f.getClass().getClassLoader());
+                f.mArguments = args;
+            }
+            return f;
+
+ 
+Here is fragments code to create object and pass bundle arguments, at the time creation of object. 
+
+    public static LoginFragment getInstance(String userName, String password) {
+
+        LoginFragment fragment = new LoginFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putString(KEY_USER_NAME,userName);
+        bundle.putString(KEY_PASSWORD,password);
+
+        fragment.setArguments(bundle);
+
+        return fragment;
+    }
+
+----------
+
+
+
+Toast Notification
+-------------
+
+**Toast**
+
+Simple message to user, generally not intractable. By the definition in document toast is  *A toast is a view containing a quick little message for the user.  The toast class  helps you create and show those.* you can create toast using following code
+
+    Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+ 
+ this - context, msg - message to display ,duration - short duration. Until and unless you are not going to call show(), toast will not be displayed. 
+ 
+**custom toast**   
+   
+   you can create toast with any view by specifying view to the toast object.
+
+    private void customToast(){
+        Toast toast = Toast.makeText(this,"",Toast.LENGTH_SHORT);
+        ImageView image = new ImageView(this);
+        image.setImageResource(R.mipmap.ic_launcher);
+        toast.setView(image);
+        toast.show();
+    }
+
+----------
+
+
+Statusbar notifications
+-------------
+
+these will appear in the status bar .
+
+----------
+
+
+Documents
+-------------
 
 
 ----------
+
+

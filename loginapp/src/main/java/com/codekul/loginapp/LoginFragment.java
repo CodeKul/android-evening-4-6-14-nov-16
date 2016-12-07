@@ -31,6 +31,8 @@ public class LoginFragment extends Fragment {
     }
 
     public LoginFragment() {
+
+        super();
         // Required empty public constructor
     }
 
