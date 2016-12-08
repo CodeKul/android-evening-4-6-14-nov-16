@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BroadcastReceivers</string>
+    <string name="btnBroadcast">Broadcast</string>
+</resources>

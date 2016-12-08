@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/alignment" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/bouncingball" />
+            <option value="$PROJECT_DIR$/broadcastreceivers" />
             <option value="$PROJECT_DIR$/buttonclicks" />
             <option value="$PROJECT_DIR$/calculator" />
             <option value="$PROJECT_DIR$/compoundview" />
@@ -29,6 +30,7 @@
             <option value="$PROJECT_DIR$/ownhandling" />
             <option value="$PROJECT_DIR$/relativelayout" />
             <option value="$PROJECT_DIR$/retainingstate" />
+            <option value="$PROJECT_DIR$/sharedprefs" />
             <option value="$PROJECT_DIR$/simplevalueresources" />
             <option value="$PROJECT_DIR$/statusbarnotifications" />
             <option value="$PROJECT_DIR$/toast" />
