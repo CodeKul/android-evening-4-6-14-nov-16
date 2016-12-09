@@ -20,9 +20,11 @@
             <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/cutsomadapter" />
             <option value="$PROJECT_DIR$/dialogs" />
+            <option value="$PROJECT_DIR$/externalstorage" />
             <option value="$PROJECT_DIR$/fragments" />
             <option value="$PROJECT_DIR$/intentsandintentfilters" />
             <option value="$PROJECT_DIR$/interactivitycommunication" />
+            <option value="$PROJECT_DIR$/internalstorage" />
             <option value="$PROJECT_DIR$/languagehandling" />
             <option value="$PROJECT_DIR$/listview" />
             <option value="$PROJECT_DIR$/loginapp" />
@@ -32,6 +34,7 @@
             <option value="$PROJECT_DIR$/retainingstate" />
             <option value="$PROJECT_DIR$/sharedprefs" />
             <option value="$PROJECT_DIR$/simplevalueresources" />
+            <option value="$PROJECT_DIR$/sqlite" />
             <option value="$PROJECT_DIR$/statusbarnotifications" />
             <option value="$PROJECT_DIR$/toast" />
             <option value="$PROJECT_DIR$/uixml" />
