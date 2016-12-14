@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Sqlite</string>
+    <string name="edtMyName">My Name</string>
+    <string name="edtMyAge">My Age</string>
+    <string name="btnInsert">Insert</string>
+    <string name="btnUpdate">Update</string>
+    <string name="btnDelete">Delete</string>
+    <string name="btnDisplay">Display</string>
 </resources>
