@@ -1069,10 +1069,257 @@ To ACTION_VIEW you can pass any type of data to open respective activity.
 
 
 
+Storage
+-------------
+
+ - Shared Preferences
+ - Internal Storage
+ - External Storage
+ - Sqlite
+
+**Shared Preferences**
+To store primitive types in key and value pairs. 
+
+*getSharedPreferences* - provide name of preference file and can be accessed by any app.
+
+*getPreferences* - only activity can access this in your provided mode.
+
+*Editor* - all the changes you are going to make that would  be batched in editor. So until and unless you are not going to call *commit* changes would not be getting reflected to preference file. 
+
+**Internal Storage** 
+
+private data of your application, which can not be accessed by any other apps, unless you provide content provider for your private files.
+
+*openFileInput and openFileOutPut* -  this will read or write to the private storage using standard FileInputStream or FileOutputStream.
+
+    private void saveData() {
+        try {
+            FileOutputStream fos = openFileOutput("my.txt",MODE_APPEND);
+            fos.write("Hello, codekul".getBytes());
+            fos.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+
+
+    private void display() {
+        try {
+            FileInputStream fis = openFileInput("my.txt");
+            StringBuilder builder = new StringBuilder();
+            while(true){
+                int ch = fis.read();
+                if(ch == -1) break;
+                else builder.append((char)ch);
+            }
+
+            ((TextView)findViewById(R.id.textData))
+                    .setText(builder.toString());
+            fis.close();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+*getFilesDir* - it will return private location path.
+
+*getCacheDir* - it will return the path where cache files will be stored in private storage.
+
+**External Storage** 
+
+You need to have permissions READ_EXTERNAL_STORAGE or WRITE_EXTERNAL_STORAGE.
+
+It is sometimes private data of your app on external storage or publicly  accessible data on sdcard. It can be your fixed internal storage.
+
+check external storage state
+
+     private Boolean isMediaGood() {
+        return Environment
+                .getExternalStorageState()
+                .equals(Environment.MEDIA_MOUNTED);
+    }
+
+
+*getExternalFilesDir* - saves private data on external storage, which can be accessed only by your app. you can pass the directory, where you want to store files 
+
+    private void saveAppPrivate() {
+
+        if (isMediaGood()) {
+            File file = new File(getExternalFilesDir(""), "my.txt");
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                fos.write("Hello , CodeKul".getBytes());
+                fos.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else mt(getResources().getString(R.string.bad_media));
+    }
+
+*Environment.getExternalStoragePublicDirectory()*  - saves publicly accessible data on external storage. Here also you can pass directory where you want to store files.
+
+    private void savePublicData() {
+
+        if (isMediaGood()) {
+            File file = new File(Environment
+                    .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+                    "my.txt");
+
+            try {
+                FileOutputStream fos = new FileOutputStream(file);
+                fos.write("Hello , CodeKul".getBytes());
+                fos.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else mt(getResources().getString(R.string.bad_media));
+    }
+
+  
+  
+----------
+
+
+SQLite
+-------------
+
+ - liter version of sql
+ - self-contained, serverless, zero-configuration, transactional
+
+**SqliteOpenHelper**
+
+A helper class to manage database creation and version management. onCreate and onUpgrade need to 
+be implemented in children.
+
+*onCreate* - will be called only once so it is good place to create your tables.
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+       db.execSQL("create table myTable(myName text, myAge number)");
+    }
+
+*onUpgrade* - when db versions are going to be mismatched this method gets invoked.
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+    }
+
+**Db operations** 
+
+*Insert -* content values would be used for mapping columns to value. Data need to be opened in write mode.
+
+    private void insert(){
+
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("myName",getMyName());
+        values.put("myAge",getMyAge());
+        db.insert("myTable",null,values);
+
+        db.close();
+    }
+
+*Display* - here you need to manage cursor. we need to iterate over cursor. Excluding table name if all parameters are null then query will be *select * from table name.*
+
+    private void display() {
+
+        SQLiteDatabase db = helper.getReadableDatabase();
+
+        String table = "myTable";
+        String[] columns = {"myName"};
+        String selection = "myAge = ?";
+        String[] selectionArgs = {""+getMyAge()};
+        String groupBy = null;
+        String having =null;
+        String orderBy = null;
+
+        Cursor cursor = db.query(table,columns,selection,selectionArgs,groupBy,having,orderBy);
+
+        if(cursor.moveToNext()){
+            String myName = cursor.getString(cursor.getColumnIndex("myName"));
+            //Integer myAge = cursor.getInt(cursor.getColumnIndex("myAge"));
+            //Log.i("@codekul","Name - "+myName +" Age - "+myAge);
+            Log.i("@codekul","Name - "+myName );
+            ((EditText)findViewById(R.id.edtMyName)).setText(myName);
+        }
+        db.close();
+    }
+
+*update*  -  for updating any record you need to pass value that need to be updated and where statement. 
+
+    private void update() {
+
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        String table="myTable";
+        ContentValues values = new ContentValues();
+        values.put("myName",getMyName());
+        String whereClause = "myAge = ?";
+        String[] whereArgs = {String.valueOf(getMyAge())};
+
+        db.update(table,values,whereClause,whereArgs);
+
+        db.close();
+    }
+
+ *Delete* - for delete operation you need to pass the where clause
+
+    private void delete() {
+
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        String table = "myTable";
+        String whereClause = "myAge = ?";
+        String[] whereArgs = {String.valueOf(getMyAge())};
+
+        db.delete(table,whereClause,whereArgs);
+
+        db.close();
+    }
+
+
+**native sqls** 
+
+You can either use androids way for performing db operations or use native sqls as follows 
+
+*select Query -*  for selecting from database we will use rawQuery method which will return cursor.
+
+    private void selectRawSql() {
+        SQLiteDatabase sqDb = helper.getReadableDatabase();
+        Cursor cursor = sqDb.rawQuery("select * from myTable",null);
+        while(cursor.moveToNext()) {
+            String myName = cursor.getString(cursor.getColumnIndex("myName"));
+            int myAge = cursor.getInt(cursor.getColumnIndex("myAge"));
+            Log.i("@codekul","Name - "+myName +" Age - "+myAge);
+        }
+        sqDb.close();
+    }
+
+
+*insert query -*  if you want to insert you would be using execSql .
+
+     private void insertRaw() {
+        SQLiteDatabase sqDb = helper.getWritableDatabase();
+        sqDb.execSQL("insert into myTable values('rawAndroid',20)");
+        sqDb.close();
+    }
+
+----------
+
+
+
+
 
 Documents
 -------------
 
 
 ----------
+
+
 

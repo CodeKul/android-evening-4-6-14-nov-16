@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void click(View view) {
-        if(view.getId() == R.id.btnInsert) insert();
+        if(view.getId() == R.id.btnInsert) insertRaw();
         if(view.getId() == R.id.btnUpdate) update();
         if(view.getId() == R.id.btnDelete) delete();
-        if(view.getId() == R.id.btnDisplay) display();
+        if(view.getId() == R.id.btnDisplay) selectRawSql();
     }
 
 
@@ -51,10 +51,30 @@ public class MainActivity extends AppCompatActivity {
 
     private void update() {
 
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        String table="myTable";
+        ContentValues values = new ContentValues();
+        values.put("myName",getMyName());
+        String whereClause = "myAge = ?";
+        String[] whereArgs = {String.valueOf(getMyAge())};
+
+        db.update(table,values,whereClause,whereArgs);
+
+        db.close();
     }
 
     private void delete() {
 
+        SQLiteDatabase db = helper.getWritableDatabase();
+
+        String table = "myTable";
+        String whereClause = "myAge = ?";
+        String[] whereArgs = {String.valueOf(getMyAge())};
+
+        db.delete(table,whereClause,whereArgs);
+
+        db.close();
     }
 
     private void display() {
@@ -71,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         Cursor cursor = db.query(table,columns,selection,selectionArgs,groupBy,having,orderBy);
 
-        if(cursor.moveToNext()){
+        while(cursor.moveToNext()){
             String myName = cursor.getString(cursor.getColumnIndex("myName"));
             //Integer myAge = cursor.getInt(cursor.getColumnIndex("myAge"));
             //Log.i("@codekul","Name - "+myName +" Age - "+myAge);
@@ -79,6 +99,23 @@ public class MainActivity extends AppCompatActivity {
             ((EditText)findViewById(R.id.edtMyName)).setText(myName);
         }
         db.close();
+    }
+
+    private void selectRawSql() {
+        SQLiteDatabase sqDb = helper.getReadableDatabase();
+        Cursor cursor = sqDb.rawQuery("select * from myTable",null);
+        while(cursor.moveToNext()) {
+            String myName = cursor.getString(cursor.getColumnIndex("myName"));
+            int myAge = cursor.getInt(cursor.getColumnIndex("myAge"));
+            Log.i("@codekul","Name - "+myName +" Age - "+myAge);
+        }
+        sqDb.close();
+    }
+
+    private void insertRaw() {
+        SQLiteDatabase sqDb = helper.getWritableDatabase();
+        sqDb.execSQL("insert into myTable values('rawAndroid',20)");
+        sqDb.close();
     }
 
     private String getMyName() {
