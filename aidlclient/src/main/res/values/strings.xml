@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AIDLClient</string>
+    <string name="btnBind">Bind</string>
+    <string name="btnCalculate">Calculate</string>
+</resources>
