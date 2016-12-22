@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/calculator/calculator.iml" filepath="$PROJECT_DIR$/calculator/calculator.iml" />
       <module fileurl="file://$PROJECT_DIR$/compoundview/compoundview.iml" filepath="$PROJECT_DIR$/compoundview/compoundview.iml" />
       <module fileurl="file://$PROJECT_DIR$/constraintlayout/constraintlayout.iml" filepath="$PROJECT_DIR$/constraintlayout/constraintlayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contactapp/contactapp.iml" filepath="$PROJECT_DIR$/contactapp/contactapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/customview/customview.iml" filepath="$PROJECT_DIR$/customview/customview.iml" />
       <module fileurl="file://$PROJECT_DIR$/cutsomadapter/cutsomadapter.iml" filepath="$PROJECT_DIR$/cutsomadapter/cutsomadapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/dialogs/dialogs.iml" filepath="$PROJECT_DIR$/dialogs/dialogs.iml" />
@@ -25,10 +26,12 @@
       <module fileurl="file://$PROJECT_DIR$/languagehandling/languagehandling.iml" filepath="$PROJECT_DIR$/languagehandling/languagehandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/listview/listview.iml" filepath="$PROJECT_DIR$/listview/listview.iml" />
       <module fileurl="file://$PROJECT_DIR$/loginapp/loginapp.iml" filepath="$PROJECT_DIR$/loginapp/loginapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/materialdesign/materialdesign.iml" filepath="$PROJECT_DIR$/materialdesign/materialdesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/orientationhandling/orientationhandling.iml" filepath="$PROJECT_DIR$/orientationhandling/orientationhandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/ownhandling/ownhandling.iml" filepath="$PROJECT_DIR$/ownhandling/ownhandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/relativelayout/relativelayout.iml" filepath="$PROJECT_DIR$/relativelayout/relativelayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/retainingstate/retainingstate.iml" filepath="$PROJECT_DIR$/retainingstate/retainingstate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/runtimepermissions/runtimepermissions.iml" filepath="$PROJECT_DIR$/runtimepermissions/runtimepermissions.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/services.iml" filepath="$PROJECT_DIR$/services/services.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedprefs/sharedprefs.iml" filepath="$PROJECT_DIR$/sharedprefs/sharedprefs.iml" />
       <module fileurl="file://$PROJECT_DIR$/simplevalueresources/simplevalueresources.iml" filepath="$PROJECT_DIR$/simplevalueresources/simplevalueresources.iml" />
@@ -39,6 +42,7 @@
       <module fileurl="file://$PROJECT_DIR$/uixml/uixml.iml" filepath="$PROJECT_DIR$/uixml/uixml.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewanimation/viewanimation.iml" filepath="$PROJECT_DIR$/viewanimation/viewanimation.iml" />
       <module fileurl="file://$PROJECT_DIR$/viewmesurementunits/viewmesurementunits.iml" filepath="$PROJECT_DIR$/viewmesurementunits/viewmesurementunits.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wa/wa.iml" filepath="$PROJECT_DIR$/wa/wa.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MaterialDesign</string>
+    <string name="action_settings">Settings</string>
+    <string name="edtUserName">User Name</string>
+    <string name="edtPassword">Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="actionProfile">Profile</string>
+    <string name="actionCut">Cut</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+</resources>
