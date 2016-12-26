@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">JsonParsing</string>
+    <string name="btnParse">Parse</string>
+</resources>

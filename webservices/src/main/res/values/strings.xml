@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WebServices</string>
+    <string name="btnApi">Api</string>
+</resources>

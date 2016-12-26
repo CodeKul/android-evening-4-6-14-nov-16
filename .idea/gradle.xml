@@ -28,6 +28,7 @@
             <option value="$PROJECT_DIR$/intentsandintentfilters" />
             <option value="$PROJECT_DIR$/interactivitycommunication" />
             <option value="$PROJECT_DIR$/internalstorage" />
+            <option value="$PROJECT_DIR$/jsonparsing" />
             <option value="$PROJECT_DIR$/languagehandling" />
             <option value="$PROJECT_DIR$/listview" />
             <option value="$PROJECT_DIR$/loginapp" />
@@ -49,6 +50,7 @@
             <option value="$PROJECT_DIR$/viewanimation" />
             <option value="$PROJECT_DIR$/viewmesurementunits" />
             <option value="$PROJECT_DIR$/wa" />
+            <option value="$PROJECT_DIR$/webservices" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
