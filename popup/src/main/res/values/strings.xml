@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PopUp</string>
+    <string-array name="countries">
+        <item>India</item>
+        <item>China</item>
+        <item>Japan</item>
+        <item>Sri Lanka</item>
+        <item>US</item>
+        <item>UK</item>
+    </string-array>
+</resources>
