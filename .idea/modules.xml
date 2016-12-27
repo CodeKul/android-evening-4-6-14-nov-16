@@ -34,6 +34,7 @@
       <module fileurl="file://$PROJECT_DIR$/relativelayout/relativelayout.iml" filepath="$PROJECT_DIR$/relativelayout/relativelayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/retainingstate/retainingstate.iml" filepath="$PROJECT_DIR$/retainingstate/retainingstate.iml" />
       <module fileurl="file://$PROJECT_DIR$/runtimepermissions/runtimepermissions.iml" filepath="$PROJECT_DIR$/runtimepermissions/runtimepermissions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/searchview/searchview.iml" filepath="$PROJECT_DIR$/searchview/searchview.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/services.iml" filepath="$PROJECT_DIR$/services/services.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedprefs/sharedprefs.iml" filepath="$PROJECT_DIR$/sharedprefs/sharedprefs.iml" />
       <module fileurl="file://$PROJECT_DIR$/simplevalueresources/simplevalueresources.iml" filepath="$PROJECT_DIR$/simplevalueresources/simplevalueresources.iml" />
