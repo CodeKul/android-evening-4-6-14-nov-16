@@ -13,10 +13,12 @@
             <option value="$PROJECT_DIR$/aidlserver" />
             <option value="$PROJECT_DIR$/alignment" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/bluetooth" />
             <option value="$PROJECT_DIR$/bouncingball" />
             <option value="$PROJECT_DIR$/broadcastreceivers" />
             <option value="$PROJECT_DIR$/buttonclicks" />
             <option value="$PROJECT_DIR$/calculator" />
+            <option value="$PROJECT_DIR$/chip" />
             <option value="$PROJECT_DIR$/compoundview" />
             <option value="$PROJECT_DIR$/constraintlayout" />
             <option value="$PROJECT_DIR$/contactapp" />
@@ -25,12 +27,14 @@
             <option value="$PROJECT_DIR$/dialogs" />
             <option value="$PROJECT_DIR$/externalstorage" />
             <option value="$PROJECT_DIR$/fragments" />
+            <option value="$PROJECT_DIR$/googlemaps" />
             <option value="$PROJECT_DIR$/intentsandintentfilters" />
             <option value="$PROJECT_DIR$/interactivitycommunication" />
             <option value="$PROJECT_DIR$/internalstorage" />
             <option value="$PROJECT_DIR$/jsonparsing" />
             <option value="$PROJECT_DIR$/languagehandling" />
             <option value="$PROJECT_DIR$/listview" />
+            <option value="$PROJECT_DIR$/locationapp" />
             <option value="$PROJECT_DIR$/loginapp" />
             <option value="$PROJECT_DIR$/materialdesign" />
             <option value="$PROJECT_DIR$/orientationhandling" />
@@ -52,6 +56,7 @@
             <option value="$PROJECT_DIR$/viewmesurementunits" />
             <option value="$PROJECT_DIR$/wa" />
             <option value="$PROJECT_DIR$/webservices" />
+            <option value="$PROJECT_DIR$/wifi" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

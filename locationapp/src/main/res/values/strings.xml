@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LocationApp</string>
+    <string name="edtAnything">Anything</string>
+    <string name="btnOkay" >Okay</string>
+    <string name="edtLat">Latitude</string>
+    <string name="edtLng">Longitude</string>
+    <string name="btnLocation">Location</string>
+</resources>

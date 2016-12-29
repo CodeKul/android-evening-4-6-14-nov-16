@@ -8,10 +8,12 @@
       <module fileurl="file://$PROJECT_DIR$/aidlserver/aidlserver.iml" filepath="$PROJECT_DIR$/aidlserver/aidlserver.iml" />
       <module fileurl="file://$PROJECT_DIR$/alignment/alignment.iml" filepath="$PROJECT_DIR$/alignment/alignment.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bluetooth/bluetooth.iml" filepath="$PROJECT_DIR$/bluetooth/bluetooth.iml" />
       <module fileurl="file://$PROJECT_DIR$/bouncingball/bouncingball.iml" filepath="$PROJECT_DIR$/bouncingball/bouncingball.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcastreceivers/broadcastreceivers.iml" filepath="$PROJECT_DIR$/broadcastreceivers/broadcastreceivers.iml" />
       <module fileurl="file://$PROJECT_DIR$/buttonclicks/buttonclicks.iml" filepath="$PROJECT_DIR$/buttonclicks/buttonclicks.iml" />
       <module fileurl="file://$PROJECT_DIR$/calculator/calculator.iml" filepath="$PROJECT_DIR$/calculator/calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chip/chip.iml" filepath="$PROJECT_DIR$/chip/chip.iml" />
       <module fileurl="file://$PROJECT_DIR$/compoundview/compoundview.iml" filepath="$PROJECT_DIR$/compoundview/compoundview.iml" />
       <module fileurl="file://$PROJECT_DIR$/constraintlayout/constraintlayout.iml" filepath="$PROJECT_DIR$/constraintlayout/constraintlayout.iml" />
       <module fileurl="file://$PROJECT_DIR$/contactapp/contactapp.iml" filepath="$PROJECT_DIR$/contactapp/contactapp.iml" />
@@ -20,12 +22,14 @@
       <module fileurl="file://$PROJECT_DIR$/dialogs/dialogs.iml" filepath="$PROJECT_DIR$/dialogs/dialogs.iml" />
       <module fileurl="file://$PROJECT_DIR$/externalstorage/externalstorage.iml" filepath="$PROJECT_DIR$/externalstorage/externalstorage.iml" />
       <module fileurl="file://$PROJECT_DIR$/fragments/fragments.iml" filepath="$PROJECT_DIR$/fragments/fragments.iml" />
+      <module fileurl="file://$PROJECT_DIR$/googlemaps/googlemaps.iml" filepath="$PROJECT_DIR$/googlemaps/googlemaps.iml" />
       <module fileurl="file://$PROJECT_DIR$/intentsandintentfilters/intentsandintentfilters.iml" filepath="$PROJECT_DIR$/intentsandintentfilters/intentsandintentfilters.iml" />
       <module fileurl="file://$PROJECT_DIR$/interactivitycommunication/interactivitycommunication.iml" filepath="$PROJECT_DIR$/interactivitycommunication/interactivitycommunication.iml" />
       <module fileurl="file://$PROJECT_DIR$/internalstorage/internalstorage.iml" filepath="$PROJECT_DIR$/internalstorage/internalstorage.iml" />
       <module fileurl="file://$PROJECT_DIR$/jsonparsing/jsonparsing.iml" filepath="$PROJECT_DIR$/jsonparsing/jsonparsing.iml" />
       <module fileurl="file://$PROJECT_DIR$/languagehandling/languagehandling.iml" filepath="$PROJECT_DIR$/languagehandling/languagehandling.iml" />
       <module fileurl="file://$PROJECT_DIR$/listview/listview.iml" filepath="$PROJECT_DIR$/listview/listview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/locationapp/locationapp.iml" filepath="$PROJECT_DIR$/locationapp/locationapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/loginapp/loginapp.iml" filepath="$PROJECT_DIR$/loginapp/loginapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/materialdesign/materialdesign.iml" filepath="$PROJECT_DIR$/materialdesign/materialdesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/orientationhandling/orientationhandling.iml" filepath="$PROJECT_DIR$/orientationhandling/orientationhandling.iml" />
@@ -47,6 +51,7 @@
       <module fileurl="file://$PROJECT_DIR$/viewmesurementunits/viewmesurementunits.iml" filepath="$PROJECT_DIR$/viewmesurementunits/viewmesurementunits.iml" />
       <module fileurl="file://$PROJECT_DIR$/wa/wa.iml" filepath="$PROJECT_DIR$/wa/wa.iml" />
       <module fileurl="file://$PROJECT_DIR$/webservices/webservices.iml" filepath="$PROJECT_DIR$/webservices/webservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wifi/wifi.iml" filepath="$PROJECT_DIR$/wifi/wifi.iml" />
     </modules>
   </component>
 </project>

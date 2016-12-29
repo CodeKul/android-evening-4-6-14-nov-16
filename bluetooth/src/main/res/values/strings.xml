@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Bluetooth</string>
+    <string name="btnEnable">Enable</string>
+    <string name="btnConnectedDevices">Connected Devices</string>
+    <string name="btnStartDiscovery">Discovery</string>
+    <string name="btnMakeDiscoverable">Discoverable</string>
+    <string name="btnServer">Server</string>
+    <string name="btnClient">Client</string>
+</resources>
