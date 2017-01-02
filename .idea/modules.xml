@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/broadcastreceivers/broadcastreceivers.iml" filepath="$PROJECT_DIR$/broadcastreceivers/broadcastreceivers.iml" />
       <module fileurl="file://$PROJECT_DIR$/buttonclicks/buttonclicks.iml" filepath="$PROJECT_DIR$/buttonclicks/buttonclicks.iml" />
       <module fileurl="file://$PROJECT_DIR$/calculator/calculator.iml" filepath="$PROJECT_DIR$/calculator/calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/camera/camera.iml" filepath="$PROJECT_DIR$/camera/camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/chip/chip.iml" filepath="$PROJECT_DIR$/chip/chip.iml" />
       <module fileurl="file://$PROJECT_DIR$/compoundview/compoundview.iml" filepath="$PROJECT_DIR$/compoundview/compoundview.iml" />
       <module fileurl="file://$PROJECT_DIR$/constraintlayout/constraintlayout.iml" filepath="$PROJECT_DIR$/constraintlayout/constraintlayout.iml" />
@@ -39,11 +40,13 @@
       <module fileurl="file://$PROJECT_DIR$/retainingstate/retainingstate.iml" filepath="$PROJECT_DIR$/retainingstate/retainingstate.iml" />
       <module fileurl="file://$PROJECT_DIR$/runtimepermissions/runtimepermissions.iml" filepath="$PROJECT_DIR$/runtimepermissions/runtimepermissions.iml" />
       <module fileurl="file://$PROJECT_DIR$/searchview/searchview.iml" filepath="$PROJECT_DIR$/searchview/searchview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sensors/sensors.iml" filepath="$PROJECT_DIR$/sensors/sensors.iml" />
       <module fileurl="file://$PROJECT_DIR$/services/services.iml" filepath="$PROJECT_DIR$/services/services.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedprefs/sharedprefs.iml" filepath="$PROJECT_DIR$/sharedprefs/sharedprefs.iml" />
       <module fileurl="file://$PROJECT_DIR$/simplevalueresources/simplevalueresources.iml" filepath="$PROJECT_DIR$/simplevalueresources/simplevalueresources.iml" />
       <module fileurl="file://$PROJECT_DIR$/sqlite/sqlite.iml" filepath="$PROJECT_DIR$/sqlite/sqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/statusbarnotifications/statusbarnotifications.iml" filepath="$PROJECT_DIR$/statusbarnotifications/statusbarnotifications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/telephony/telephony.iml" filepath="$PROJECT_DIR$/telephony/telephony.iml" />
       <module fileurl="file://$PROJECT_DIR$/toast/toast.iml" filepath="$PROJECT_DIR$/toast/toast.iml" />
       <module fileurl="file://$PROJECT_DIR$/uimanipulation/uimanipulation.iml" filepath="$PROJECT_DIR$/uimanipulation/uimanipulation.iml" />
       <module fileurl="file://$PROJECT_DIR$/uixml/uixml.iml" filepath="$PROJECT_DIR$/uixml/uixml.iml" />

@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/broadcastreceivers" />
             <option value="$PROJECT_DIR$/buttonclicks" />
             <option value="$PROJECT_DIR$/calculator" />
+            <option value="$PROJECT_DIR$/camera" />
             <option value="$PROJECT_DIR$/chip" />
             <option value="$PROJECT_DIR$/compoundview" />
             <option value="$PROJECT_DIR$/constraintlayout" />
@@ -44,11 +45,13 @@
             <option value="$PROJECT_DIR$/retainingstate" />
             <option value="$PROJECT_DIR$/runtimepermissions" />
             <option value="$PROJECT_DIR$/searchview" />
+            <option value="$PROJECT_DIR$/sensors" />
             <option value="$PROJECT_DIR$/services" />
             <option value="$PROJECT_DIR$/sharedprefs" />
             <option value="$PROJECT_DIR$/simplevalueresources" />
             <option value="$PROJECT_DIR$/sqlite" />
             <option value="$PROJECT_DIR$/statusbarnotifications" />
+            <option value="$PROJECT_DIR$/telephony" />
             <option value="$PROJECT_DIR$/toast" />
             <option value="$PROJECT_DIR$/uimanipulation" />
             <option value="$PROJECT_DIR$/uixml" />
